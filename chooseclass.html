@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topper Hub - Class Selection</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            background: black;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: rgba(20, 20, 20, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            animation: neon-glow 2s infinite alternate;
+        }
+
+        @keyframes neon-glow {
+            0% { box-shadow: 0 0 15px rgba(255, 0, 255, 0.7); }
+            100% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.9); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: linear-gradient(90deg, #ff00ff, #00ffff);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 12px 30px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+        }
+
+        .access-books {
+            background: linear-gradient(90deg, #ff4500, #ff1493);
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.9);
+        }
+
+        .access-books:hover {
+            box-shadow: 0 0 30px rgba(255, 69, 0, 1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>Choose Your Class</h1>
+        <button class="btn" onclick="location.href='#'">Class 10th</button>
+        <button class="btn" onclick="location.href='#'">Class 11th</button>
+        <button class="btn" onclick="location.href='#'">Class 12th</button>
+        <button class="btn access-books" onclick="location.href='#'">Access All Books</button>
+    </div>
+
+</body>
+</html>
