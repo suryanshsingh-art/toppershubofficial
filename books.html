@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books 📚 - Topper Hub</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script> <!-- JS Particles -->
+    <style>
+        body {
+            background:black;
+            color: white;
+            font-family: "Poppins", sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Topper Hub Header */
+        .topper-header {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .topper-header span {
+            background: orange;
+            color: black;
+            padding: 5px 12px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px orange;
+        }
+
+        h1 {
+            font-size: 40px;
+            text-shadow: 0 0 15px white;
+            margin-top: 100px;
+        }
+
+        /* Search Box */
+        .search-box {
+            width: 60%;
+            margin: 30px auto;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .search-box:hover {
+            box-shadow: 0 0 25px white;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            font-size: 18px;
+            border: none;
+            background: transparent;
+            color: white;
+            border-bottom: 2px solid white;
+            outline: none;
+        }
+
+        .batch-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+
+        /* Book Batch Styling */
+        .batch {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            width: 80%;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            text-align: center;
+            display: block;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .batch:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 0 25px white;
+        }
+
+        .batch img {
+            width: 160px;
+            height: 220px;
+            margin-bottom: 10px;
+            border: 3px solid white;
+            border-radius: 10px;
+            pointer-events: none;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .batch:hover img {
+            transform: scale(1.1);
+        }
+
+        .batch h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px white;
+        }
+
+        /* Button Styling */
+        .batch button {
+            width: 90%;
+            padding: 12px;
+            margin-top: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .read-btn {
+            background: linear-gradient(45deg, green, lime);
+            color: white;
+            box-shadow: 0 0 10px lime;
+        }
+
+        .download-btn {
+            background: linear-gradient(45deg, red, orange);
+            color: white;
+            box-shadow: 0 0 10px red;
+        }
+
+        .read-btn:hover {
+            box-shadow: 0 0 20px lime;
+            transform: scale(1.05);
+        }
+
+        .download-btn:hover {
+            box-shadow: 0 0 20px red;
+            transform: scale(1.05);
+        }
+
+        /* Co-Powered Text */
+        .co-powered {
+            margin-top: 15px;
+            font-weight: bold;
+            color: orange;
+            font-size: 18px;
+            text-shadow: 0 0 10px orange;
+        }
+
+        /* JS Particle Animation */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .search-box {
+                width: 80%;
+            }
+
+            .batch {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div> <!-- Particle Animation Background -->
+
+    <!-- Topper Hub Header -->
+    <div class="topper-header">
+        TOPPERS <span>HUB</span>
+    </div>
+
+    <h1>Books 📚</h1>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search for books..." onkeyup="filterBooks()">
+    </div>
+
+    <div class="batch-container">
+
+        <!-- First Book Batch -->
+        
+              <div class="batch">
+            <img src="https://i.ibb.co/1W9CC97/IMG-20250325-083743-129.jpg" alt="Book Image">
+            <h3>🔥 ARJUNA JEE MODULES 🔥</h3>
+            <button class="read-btn" onclick="location.href='https://drive.google.com/drive/folders/1C-MEszSBm5X8JV5Gu5X9wJE0EbK3WtlP'">📖 Read</button>
+            <button class="download-btn" onclick="location.href='https://drive.google.com/drive/folders/1C-MEszSBm5X8JV5Gu5X9wJE0EbK3WtlP'">⬇️ Download</button>
+            <p class="co-powered">CO POWERED BY~ TOPPER HUB</p>
+        </div>
+             <div
+        <div class="batch">
+            <img src="https://i.ibb.co/r2Dz80V2/1000067937.jpg" alt="Book Image">
+            <h3>UNBARBAAD BOOK BY SHOBHIT NIRWAN</h3>
+            <button class="read-btn" onclick="location.href='https://drive.google.com/file/d/1-m0G3I-s612SieAJ6JDH32eVRa6iNXpl/view'">📖 Read</button>
+            <button class="download-btn" onclick="location.href='https://drive.google.com/uc?id=1-30VbbQr-uieAYGsWOZHhHv9wufNNxxE&export=download'">⬇️ Download</button>
+            <p class="co-powered">CO POWERED BY~ TOPPER HUB</p>
+        </div>
+             <div class="batch">
+            <img src="https://i.ibb.co/yFhWXGFR/IMG-20250321-104625-727.jpg" alt="Book Image">
+            <h3>MTG ALL BOOKS</h3>
+            <button class="read-btn" onclick="location.href='https://drive.google.com/drive/folders/14_g2FA_hZIrIlKKFupsl7J2eBLZ_Hd9P'">📖 Read</button>
+            <button class="download-btn" onclick="location.href='https://drive.google.com/drive/folders/14_g2FA_hZIrIlKKFupsl7J2eBLZ_Hd9P'">⬇️ Download</button>
+            <p class="co-powered">CO POWERED BY~ TOPPER HUB</p>
+        </div>
+              
+             <div class="batch">
+            <img src="https://i.ibb.co/yFhWXGFR/IMG-20250321-104625-727.jpg" alt="Book Image">
+            <h3>ARIHANT BOOKS 🥶</h3>
+            <button class="read-btn" onclick="location.href='https://drive.google.com/drive/folders/14tD2zdst6s5r4CKGtfDqz2z7bzSicdVf'">📖 Read</button>
+            <button class="download-btn" onclick="location.href='https://drive.google.com/drive/folders/14tD2zdst6s5r4CKGtfDqz2z7bzSicdVf'">⬇️ Download</button>
+            <p class="co-powered">CO POWERED BY~ TOPPER HUB</p>
+        </div>
+            
+             <div class="batch">
+            <img src="https://i.ibb.co/yFhWXGFR/IMG-20250321-104625-727.jpg" alt="Book Image">
+            <h3>DISHA MAM BOOKS </h3>
+            <button class="read-btn" onclick="location.href='https://drive.google.com/drive/folders/14T-JM7TxSmVYOT3hYzj0hYsLvZBpJtFx'">📖 Read</button>
+            <button class="download-btn" onclick="location.href='https://drive.google.com/drive/folders/14T-JM7TxSmVYOT3hYzj0hYsLvZBpJtFx'">⬇️ Download</button>
+            <p class="co-powered">CO POWERED BY~ TOPPER HUB</p>
+        </div>
+            
+             <div class="batch">
+            <img src="https://i.ibb.co/yFhWXGFR/IMG-20250321-104625-727.jpg" alt="Book Image">
+            <h3>HACKS+HC VERMA CONCEPTS</h3>
+            <button class="read-btn" onclick="location.href='https://drive.google.com/drive/folders/157UxUeFK19ADd8BWmmIxmFnzHrGlTwdk'">📖 Read</button>
+            <button class="download-btn" onclick="location.href='https://drive.google.com/drive/folders/157UxUeFK19ADd8BWmmIxmFnzHrGlTwdk'">⬇️ Download</button>
+            <p class="co-powered">CO POWERED BY~ TOPPER HUB</p>
+        </div>
+            
+             <div class="batch">
+            <img src="https://i.ibb.co/yFhWXGFR/IMG-20250321-104625-727.jpg" alt="Book Image">
+            <h3>KNOW YOUR NCERT 😅</h3>
+            <button class="read-btn" onclick="location.href='https://drive.google.com/drive/folders/14OVwKWk7tdzdnRnvBpj7zt_orvbjbDP5'">📖 Read</button>
+            <button class="download-btn" onclick="location.href='https://drive.google.com/drive/folders/14OVwKWk7tdzdnRnvBpj7zt_orvbjbDP5'">⬇️ Download</button>
+            <p class="co-powered">CO POWERED BY~ TOPPER HUB</p>
+        </div>
+           
+             <div class="batch">
+            <img src="https://i.ibb.co/yFhWXGFR/IMG-20250321-104625-727.jpg" alt="Book Image">
+            <h3>MOTION HANDBOOKS 🕶️</h3>
+            <button class="read-btn" onclick="location.href='https://drive.google.com/drive/folders/14_LD2Ccl2jNGbg6u4UqAOWtZd5prHxkh'">📖 Read</button>
+            <button class="download-btn" onclick="location.href='https://drive.google.com/drive/folders/14_LD2Ccl2jNGbg6u4UqAOWtZd5prHxkh'">⬇️ Download</button>
+            <p class="co-powered">CO POWERED BY~ TOPPER HUB</p>
+        </div>
+           
+             <div class="batch">
+            <img src="https://i.ibb.co/yFhWXGFR/IMG-20250321-104625-727.jpg" alt="Book Image">
+            <h3>NCERT BOOKS</h3>
+            <button class="read-btn" onclick="location.href='https://drive.google.com/drive/folders/14feOGL4QwjtKIR0X22CwMWI3V1OHMS12'">📖 Read</button>
+            <button class="download-btn" onclick="location.href='https://drive.google.com/drive/folders/14feOGL4QwjtKIR0X22CwMWI3V1OHMS12'">⬇️ Download</button>
+            <p class="co-powered">CO POWERED BY~ TOPPER HUB</p>
+        </div>
+       
+             <div class="batch">
+            <img src="https://i.ibb.co/yFhWXGFR/IMG-20250321-104625-727.jpg" alt="Book Image">
+            <h3>NEET TEXTBOOKS</h3>
+            <button class="read-btn" onclick="location.href='https://drive.google.com/drive/folders/14v2TqHafEOa1_jK4plhCLGHzT9_3tILp'">📖 Read</button>
+            <button class="download-btn" onclick="location.href='https://drive.google.com/drive/folders/14v2TqHafEOa1_jK4plhCLGHzT9_3tILp'">⬇️ Download</button>
+            <p class="co-powered">CO POWERED BY~ TOPPER HUB</p>
+        </div>
+            
+             <div class="batch">
+            <img src="https://i.ibb.co/yFhWXGFR/IMG-20250321-104625-727.jpg" alt="Book Image">
+            <h3>PW BOOKS 🔥</h3>
+            <button class="read-btn" onclick="location.href='https://drive.google.com/drive/folders/14lZES_15iDwJEou3s14T7jMgPq3M9vNP'">📖 Read</button>
+            <button class="download-btn" onclick="location.href='https://drive.google.com/drive/folders/14lZES_15iDwJEou3s14T7jMgPq3M9vNP'">⬇️ Download</button>
+            <p class="co-powered">CO POWERED BY~ TOPPER HUB</p>
+        </div>
+           
+             <div class="batch">
+            <img src="https://i.ibb.co/yFhWXGFR/IMG-20250321-104625-727.jpg" alt="Book Image">
+            <h3>TOP 99 QUESTION+ RAPID REVISION BOOKS</h3>
+            <button class="read-btn" onclick="location.href='https://drive.google.com/drive/folders/14sG--45SMOkxTg-THELCQWAU2ODFgml7'">📖 Read</button>
+            <button class="download-btn" onclick="location.href='https://drive.google.com/drive/folders/14sG--45SMOkxTg-THELCQWAU2ODFgml7'">⬇️ Download</button>
+            <p class="co-powered">CO POWERED BY~ TOPPER HUB</p>
+        </div>
+        
+             <div
+              class="batch">
+            <img src="https://i.ibb.co/yFhWXGFR/IMG-20250321-104625-727.jpg" alt="Book Image">
+            <h3>RD SHARMA XI</h3>
+            <button class="read-btn" onclick="location.href='https://drive.google.com/file/d/13yLUD5wGW1vdJqlm1HzRKASeMAnNmCaA/view?usp=drivesdk'">📖 Read</button>
+            <button class="download-btn" onclick="location.href='https://drive.google.com/file/d/13yLUD5wGW1vdJqlm1HzRKASeMAnNmCaA/view?usp=drivesdk'">⬇️ Download</button>
+            <p class="co-powered">CO POWERED BY~ TOPPER HUB</p>
+         <div>
+ 
+        
+
+    </div>
+
+    <script>
+        function filterBooks() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let batches = document.querySelectorAll('.batch');
+
+            batches.forEach(batch => {
+                let title = batch.querySelector('h3').textContent.toLowerCase();
+                batch.style.display = title.includes(input) ? 'block' : 'none';
+            });
+        }
+
+        // Load JS Particles Animation
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 120 },
+                "size": { "value": 4 },
+                "move": { "speed": 2.5 }
+            }
+        });
+    </script>
+
+</body>
+</html>
