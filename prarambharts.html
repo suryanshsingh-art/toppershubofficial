@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRARAMBH BATCH - Toppers Hub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        /* General Page Styling */
+        body {
+            background: #000; /* Pure Black */
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #ff00ff, #00ffff);
+            padding: 15px 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 20px rgba(255, 0, 255, 1);
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.8);
+            border-bottom: 3px solid rgba(255, 0, 255, 0.8);
+        }
+
+        .highlight {
+            background: #ff9900;
+            padding: 4px 10px;
+            border-radius: 5px;
+            color: black;
+            text-shadow: none;
+        }
+
+        /* Neon Search Bar */
+        .search-container {
+            margin: 20px auto;
+        }
+
+        #search-bar {
+            padding: 12px;
+            width: 60%;
+            font-size: 1.3rem;
+            border-radius: 25px;
+            border: 2px solid #ff00ff;
+            outline: none;
+            text-align: center;
+            background: black;
+            color: white;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+            transition: 0.3s;
+        }
+
+        #search-bar:focus {
+            box-shadow: 0 0 25px rgba(255, 0, 255, 1);
+        }
+
+        /* Section Title */
+        h2 {
+            margin-top: 15px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1);
+            animation: glow 1.5s infinite alternate;
+            border-bottom: 3px solid rgba(0, 255, 255, 0.8);
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 15px rgba(0, 255, 255, 0.8); }
+            100% { text-shadow: 0 0 30px rgba(0, 255, 255, 1); }
+        }
+
+        /* Batches Section */
+        .batches-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .batch {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            margin: 15px;
+            border-radius: 12px;
+            text-align: center;
+            width: 320px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+            transition: 0.3s;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(0, 255, 255, 0.6);
+        }
+
+        .batch:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 35px rgba(0, 255, 255, 1);
+        }
+
+        .batch img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            transition: 0.3s;
+        }
+
+        .batch img:hover {
+            transform: scale(1.05);
+        }
+
+        .batch h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+            color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 1);
+        }
+
+        /* Glowing Buttons */
+        .batch button {
+            background: linear-gradient(90deg, #ff00ff, #00ffff);
+            border: none;
+            padding: 12px 18px;
+            margin: 8px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.9);
+            color: white;
+        }
+
+        .batch button:hover {
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        TOPPER <span class="highlight">Hub</span>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search subjects..." onkeyup="filterBatches()">
+    </div>
+<!-- Live Classes Section -->
+<div class="live-classes-section">
+    <h3>Live Classes 🎥</h3>
+    <a href="liveclasscm.html" class="live-classes-button">Join Now</a>
+</div>
+
+<!-- Live Classes Styling -->
+<style>
+    .live-classes-section {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 12px;
+        margin: 12px auto;
+        border-radius: 8px;
+        width: 80%;
+        box-shadow: 0 0 12px rgba(0, 255, 255, 0.7);
+        border: 1.5px solid rgba(0, 255, 255, 0.5);
+        backdrop-filter: blur(5px);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .live-classes-button {
+        display: inline-block;
+        background: linear-gradient(90deg, #ff00ff, #00ffff);
+        color: white;
+        padding: 8px 14px;
+        font-size: 1rem;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 6px;
+        box-shadow: 0 3px 10px rgba(0, 255, 255, 0.8);
+        transition: 0.3s;
+    }
+
+    .live-classes-button:hover {
+        background: linear-gradient(90deg, #00ffff, #ff00ff);
+        box-shadow: 0 0 15px rgba(0, 255, 255, 1);
+        transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+    <!-- prarambh arts batch Heading -->
+ 
+<h3>RECORDED LECTURES COMING SOON <h3>
+        </div>
+    </div>
+
+    <script>
+        function filterBatches() {
+            let input = document.getElementById("search-bar").value.toLowerCase();
+            let batches = document.querySelectorAll(".batch");
+
+            batches.forEach(batch => {
+                let name = batch.getAttribute("data-name").toLowerCase();
+                if (name.includes(input)) {
+                    batch.style.display = "block";
+                } else {
+                    batch.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

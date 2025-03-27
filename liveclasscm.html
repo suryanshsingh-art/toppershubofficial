@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Classes - Coming Soon | Topper Hub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle, #111, #000);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* 🔥 Background Effect */
+        .fire-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* ⚡ Smooth Glowing Title */
+        .title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #ff1a1a;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px red, 0 0 20px red;
+            animation: glow 1.5s infinite alternate ease-in-out;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px red, 0 0 20px red; }
+            100% { text-shadow: 0 0 15px #ff4d4d, 0 0 25px #ff3333; }
+        }
+
+        /* ⚡ Subtitle Text */
+        .sub-text {
+            font-size: 1.8rem;
+            margin: 10px 0;
+            color: #ffcc00;
+            text-shadow: 0 0 10px #ffcc00;
+        }
+
+        /* ⚡ Modern Button */
+        .btn {
+            background: linear-gradient(45deg, #ff1a1a, #ff4d4d);
+            color: black;
+            font-size: 1.5rem;
+            padding: 15px 35px;
+            border: none;
+            cursor: not-allowed;
+            box-shadow: 0 0 15px red;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px red;
+        }
+    </style>
+</head>
+<body>
+    <div class="fire-container"></div>
+
+    <div class="container">
+        <h1 class="title">LIVE CLASSES - COMING SOON</h1>
+        <p class="sub-text">⚡ AS SOON AS BATCH STARTS WE WILL PROVIDE YOU LIVE CLASSES ⚡</p>
+        <button class="btn" disabled>⚡ GET READY ⚡</button>
+    </div>
+
+    <script>
+        // 🔥 Optimized Fire Effect (Super Smooth)
+        const fireContainer = document.querySelector('.fire-container');
+
+        function createFireParticles() {
+            for (let i = 0; i < 8; i++) {  // Reduced for better performance
+                let fireParticle = document.createElement('div');
+                fireParticle.style.position = 'absolute';
+                fireParticle.style.bottom = '0';
+                fireParticle.style.width = Math.random() * 5 + 'px';
+                fireParticle.style.height = fireParticle.style.width;
+                fireParticle.style.backgroundColor = 'rgba(255, 69, 0, 0.7)';
+                fireParticle.style.borderRadius = '50%';
+                fireParticle.style.left = Math.random() * window.innerWidth + 'px';
+                fireParticle.style.animation = `rise ${Math.random() * 3 + 2}s linear infinite`;
+
+                fireContainer.appendChild(fireParticle);
+
+                setTimeout(() => {
+                    fireContainer.removeChild(fireParticle);
+                }, 3000);
+            }
+        }
+
+        setInterval(createFireParticles, 300); // Slower generation to reduce lag
+
+        document.styleSheets[0].insertRule(`
+            @keyframes rise {
+                0% { transform: translateY(0); opacity: 1; }
+                100% { transform: translateY(-200px); opacity: 0; }
+            }
+        `, 0);
+    </script>
+</body>
+</html>
